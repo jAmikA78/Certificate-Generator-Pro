@@ -1,106 +1,53 @@
 # Certificate Generator Pro
 
-A lightweight GUI tool to generate personalized certificates in bulk using a certificate template image, custom fonts, and an adjustable text placement preview.
+## Project Summary
+Certificate Generator Pro is a simple, lightweight desktop tool that helps you create personalized certificates in bulk. Just load a template image, pick your fonts, position the text with a live preview, and enter a list of names—it handles the rest, saving each one as a PNG file.
+
+## Key Features
+- Easy-to-use graphical interface built with Python's Tkinter.
+- Supports PNG and JPG certificate templates.
+- Choose custom fonts (TTF or OTF files) and text colors.
+- Live preview with zoom and click-to-place text positioning.
+- Bulk generation from a list of names, with automatic filename cleanup.
+- Progress bar to track your batch.
+
+## Project Structure
+- `main.py`: The heart of the app—handles the GUI, image processing, and certificate creation.
+
+## Steps to Clone the Repository
+1. Open your terminal or command prompt.
+2. Run: `git clone https://github.com/jAmikA78/Certificate-Generator-Pro.git`
+3. Navigate into the folder: `cd Certificate-Generator-Pro`
+
+## Installation Instructions
+1. Make sure you have Python 3.8 or higher installed.
+2. It's a good idea to create a virtual environment: `python -m venv cert_env` (then activate it with `source cert_env/bin/activate` on macOS/Linux or `cert_env\Scripts\activate` on Windows).
+3. Install the only needed library: `pip install Pillow`.
+4. Note: Tkinter comes with Python, but on some Linux systems, you might need to install it via your package manager (e.g., `sudo apt install python3-tk`).
+
+## Usage Instructions
+1. Launch the app: `python main.py`.
+2. Select your certificate template image (PNG or JPG).
+3. Pick a font file (TTF or OTF) and choose the text color.
+4. In the preview window, zoom in/out and click where you want the name placed—adjust size and style as needed.
+5. Enter names in the text box (one per line for bulk) or just one for a single certificate.
+6. Hit "Generate Certificates"—watch the progress bar, and find your new PNG files in the output folder.
+
+**Quick Example**:  
+Paste two names like:  
+```
+Ahmed Ibrahim
+Ahmed Hamam 
+```
+Click generate, and you'll get files named `John_Doe_certificate.png` and `Jane_Smith_certificate.png`.
+
+**Tips**: Use high-res templates for crisp results, and stick to clear, readable fonts.
+
+## Requirements/Prerequisites
+- Python 3.8+
+- Pillow library (for image handling)
+- Tkinter (standard in Python, but check Linux setup)
 
 ---
 
-## At a glance
-
-- Project: Certificate Generator Pro
-- Language: Python (Tkinter GUI)
-- Minimum Python: 3.8+
-- Key libraries: Pillow (PIL), tkinter (standard library)
-- Current version: 2.3
-
-This tool lets you load a certificate template image, position and style text (name), preview it on the template with zoom and custom color/font, then generate PNG certificate files for a list of names.
-
-## Features
-
-- Graphical UI built with Tkinter
-- Load PNG/JPG certificate templates
-- Select TrueType/OpenType fonts (.ttf / .otf)
-- Live preview with zoom and click-to-set position
-- Predefined and custom hex color selection for text
-- Enter multiple names (one-per-line) and generate certificates in bulk
-- Filename sanitization and collision handling
-- Progress bar and basic input validation
-
-## Installation
-
-Recommended: create and activate a virtual environment, then install dependencies.
-
-```bash
-# create venv (optional but recommended)
-python -m venv .venv
-source .venv/bin/activate    # on Windows (Git Bash): source .venv/Scripts/activate
-
-# install required package
-pip install Pillow
-```
-
-Note: Tkinter is included in the standard library for most Python distributions. On some Linux distributions you may need to install a system package (for example `python3-tk`).
-
-## Usage
-
-1. Launch the app:
-
-```bash
-python main.py
-```
-
-2. UI workflow:
-
-- Click "Browse Image" and choose your certificate template (PNG/JPG).
-- Optionally click "Select Font" to choose a .ttf/.otf font (recommended for better typography).
-- Use the Zoom slider to adjust the preview.
-- Choose "Center" or "Custom Position" for the text. If Custom, click on the preview to set X/Y coordinates or enter them manually.
-- Set font size and color (predefined or custom hex color). Use the color picker for convenience.
-- Enter names (one per line) into the "Enter Names" textbox.
-- Click "Generate Certificates" and choose an output folder. Generated files are saved as PNGs in the selected folder.
-
-Tips:
-
-- Keep your certificate image high resolution for best results.
-- Use fonts with clear glyph shapes for readability when saving as PNG.
-
-## Example
-
-- If you enter two names:
-
-```
-Jane Doe
-John Smith
-```
-
-The app will generate `certificate_Jane_Doe.png` and `certificate_John_Smith.png` (unsafe characters removed and spaces replaced by underscores). If a file exists, the app appends a counter to avoid overwriting.
-
-## Troubleshooting
-
-- "No image loaded" — select a template image first.
-- Font errors — select a compatible .ttf/.otf font or allow the app to fall back to the system/default font.
-- Unable to write to folder — choose a folder with write permissions (for example your Downloads or Desktop folder).
-- If preview looks different from final output: preview scales the image to a smaller size; generated files use the original image resolution.
-
-## Development notes
-
-- Main file: `main.py` — contains the GUI and core certificate generation logic.
-- Key dependency: `Pillow` is used for image drawing and font rendering.
-- The app sanitizes file names and guards against more than 1000 names at once.
-
-## Contributing
-
-Contributions are welcome. For small fixes and improvements:
-
-1. Fork the repo
-2. Create a branch with a clear name
-3. Open a PR describing the change and rationale
-
-Suggested improvements:
-
-- Add CLI mode for headless generation
-- Add unit tests around filename sanitization and text placement math
-- Export to PDF in addition to PNG
-
-## License
-
-MIT
+*Licensed under the MIT License.*
